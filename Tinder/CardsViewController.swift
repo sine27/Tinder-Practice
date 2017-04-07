@@ -77,7 +77,7 @@ class CardsViewController: UIViewController {
                 myImageView.transform = myImageView.transform.rotated(by: -translation.x * 0.005)
             }
             
-            if translation.y < -30 || translation.y > 30 {
+            if (translation.y < -30 || translation.y > 30), velocity.y > 350 {
                 performSegue(withIdentifier: "segue", sender: self)
             }
             
